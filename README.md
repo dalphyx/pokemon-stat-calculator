@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/dalphyx/pokemon-stat-calculator.svg?branch=master)](https://travis-ci.org/dalphyx/pokemon-stat-calculator) [![npm package](https://img.shields.io/npm/v/pokemon-stat-calculator.svg)](https://www.npmjs.com/package/pokemon-stat-calculator)
 
-> Calculat [Pokémon](https://en.wikipedia.org/wiki/Pok%C3%A9mon) stats
+> Calculate [Pokémon](https://en.wikipedia.org/wiki/Pok%C3%A9mon) stats
 
 
 
