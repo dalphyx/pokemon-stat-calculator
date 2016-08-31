@@ -1,0 +1,32 @@
+{
+  "name": "pokemon-stat-calculator",
+  "version": "0.0.0",
+  "description": "Pokémon stat calculator",
+  "main": "index.js",
+  "keywords": [
+    "pokemon",
+    "stats",
+    "data",
+    "calculator"
+  ],
+  "author": "dalphyx <wjcbmk@gmail.com>",
+  "scripts": {
+    "test": "ava ./test",
+    "lint": "eslint ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dalphyx/pokemon-stat-calculator.git"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "eslint": "^3.4.0",
+    "eslint-config-dalphyx": "^0.1.0",
+    "pokemon-base-stats": "^0.5.0"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dalphyx/pokemon-stat-calculator/issues"
+  },
+  "homepage": "https://github.com/dalphyx/pokemon-stat-calculator#readme"
+}
