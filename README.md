@@ -32,16 +32,16 @@ calculator.calUnhpStats(31, 159, 249, 50)
 // => 210
 
 let charizardBaseStats = [78, 104, 78, 159, 115, 100]
-let 6v = [31, 31, 31, 31, 31, 31]
-let 0v = [0, 0, 0, 0, 0, 0]
+let fullIVs = [31, 31, 31, 31, 31, 31]
+let zeroIVs = [0, 0, 0, 0, 0, 0]
 let emptyEVs = [0, 0, 0, 0, 0, 0]
 let fullEVs = [6, 0, 0, 252, 0, 252]
 let nature = [1, 1, 1, 1, 1]
 
-calculator.calAllStats(6v, charizardBaseStats, emptyEVs, 50, nature)
+calculator.calAllStats(fullIVs, charizardBaseStats, emptyEVs, 50, nature)
 // => [153, 124, 98, 179, 135, 120]
 
-calculator.calAllStats(0v, charizardBaseStats, fullEVs, 100, nature)
+calculator.calAllStats(zeroIVs, charizardBaseStats, fullEVs, 100, nature)
 // => [267, 213, 161, 386, 235, 268]
 ```
 
