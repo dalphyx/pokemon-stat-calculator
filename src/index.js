@@ -1,3 +1,5 @@
+const natures = require('./nature')
+
 /**
  * @param  {Number} iv          Pokémon HP IV(Individual Values)
  * @param  {Number} baseStats   Pokémon base stats
@@ -31,17 +33,26 @@ function calUnhpStats (iv, baseStats, ev = 0, level = 1, nature = 1) {
 }
 
 /**
- * @param  {Array}  ivs          Pokémon IVs(Individual Values)
- * @param  {Array}  baseStats    Pokémon base stats
- * @param  {Array}  evs          Pokémon EVs(Effort Values) from 0 ~ 255, the sum of EVs <= 510
- * @param  {Number} level        Pokémon level from 1 ~ 100
- * @param  {Array}  nature       Pokémon nature
+ * @param  {Array}         ivs          Pokémon IVs(Individual Values)
+ * @param  {Array}         baseStats    Pokémon base stats
+ * @param  {Array}         evs          Pokémon EVs(Effort Values) from 0 ~ 255, the sum of EVs <= 510
+ * @param  {Number}        level        Pokémon level from 1 ~ 100
+ * @param  {Array|String}  nature       Pokémon nature
  * @return {Array}
  */
 function calAllStats (ivs, baseStats, evs, level = 1, nature = [1, 1, 1, 1, 1]) {
   let stats = []
 
   stats.push(calHpStats(ivs[0], baseStats[0], evs[0], level))
+
+  if (typeof nature === 'string') {
+    let o = nature.toLowerCase()
+    if (natures.values[o]) {
+      nature = natures.values[o]
+    } else {
+      throw new Error('The nature is a invalid Pokémon nature.')
+    }
+  }
 
   for (let i = 1; i < 6; i++) {
     stats.push(calUnhpStats(ivs[i], baseStats[i], evs[i], level, nature[i - 1]))
@@ -50,6 +61,8 @@ function calAllStats (ivs, baseStats, evs, level = 1, nature = [1, 1, 1, 1, 1]) 
   return stats
 }
 
+exports.natureNames = natures.names
+exports.natureValues = natures.values
 exports.calHpStats = calHpStats
 exports.calUnhpStats = calUnhpStats
 exports.calAllStats = calAllStats

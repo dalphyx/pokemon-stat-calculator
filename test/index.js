@@ -1,6 +1,6 @@
 import pokemonBaseStats from 'pokemon-base-stats'
 import test from 'ava'
-import main from '../'
+import main from '../src'
 
 test('Calculate HP stats', t => {
   t.is(main.calHpStats(31, 78, 0, 100), 297)
@@ -30,4 +30,5 @@ test('Calculate all stats', t => {
   t.deepEqual(main.calAllStats(charizardIVBad, charizardBase, emptyEVs, 50), [139, 110, 84, 165, 121, 106])
   t.deepEqual(main.calAllStats(charizard6v, charizardBase, fullEVs, 100), [298, 244, 192, 417, 266, 299])
   t.deepEqual(main.calAllStats(charizardIVBad, charizardBase, fullEVs, 50), [139, 110, 84, 196, 121, 137])
+  t.deepEqual(main.calAllStats(charizard6v, charizardBase, fullEVs, 100, 'timid'), [298, 219, 192, 417, 266, 328])
 })
