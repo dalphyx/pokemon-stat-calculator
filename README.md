@@ -16,8 +16,17 @@ $ npm install pokemon-stat-calculator --save
 
 ## Usage
 
-```jsx
+```
 const calculator = require('pokemon-stat-calculator')
+
+calculator.getNatureNames()
+// => ['hardy', 'timid' ...]
+
+calculator.getNatureValue('timid')
+// => [0.9, 1, 1, 1, 1.1]
+
+calculator.getNatureDatas()
+// => See Natures Section
 
 calculator.calHpStats(3, 78, 249, 50)
 // => 170
@@ -44,9 +53,44 @@ calculator.calAllStats(fullIVs, charizardBaseStats, emptyEVs, 50, nature)
 calculator.calAllStats(zeroIVs, charizardBaseStats, fullEVs, 100, nature)
 // => [267, 213, 161, 386, 235, 268]
 ```
-
+## Natures
+```
+{
+  hardy: [1, 1, 1, 1, 1],
+  lonely: [1.1, 0.9, 1, 1, 1],
+  adamant: [1.1, 1, 0.9, 1, 1],
+  naughty: [1.1, 1, 1, 0.9, 1],
+  brave: [1.1, 1, 1, 1, 0.9],
+  bold: [0.9, 1.1, 1, 1, 1],
+  docile: [1, 1, 1, 1, 1],
+  impish: [1, 1.1, 0.9, 1, 1],
+  lax: [1, 1.1, 1, 0.9, 1],
+  relaxed: [1, 1.1, 1, 1, 0.9],
+  modest: [0.9, 1, 1.1, 1, 1],
+  mild: [1, 0.9, 1.1, 1, 1],
+  bashful: [1, 1, 1, 1, 1],
+  rash: [1, 1, 1.1, 0.9, 1],
+  quiet: [1, 1, 1.1, 1, 0.9],
+  calm: [0.9, 1, 1, 1.1, 1],
+  gentle: [1, 0.9, 1, 1.1, 1],
+  careful: [1, 1, 0.9, 1.1, 1],
+  quirky: [1, 1, 1, 1, 1],
+  sassy: [1, 1, 1, 1.1, 0.9],
+  timid: [0.9, 1, 1, 1, 1.1],
+  hasty: [1, 0.9, 1, 1, 1.1],
+  jolly: [1, 1, 0.9, 1, 1.1],
+  naive: [1, 1, 1, 0.9, 1.1],
+  serious: [1, 1, 1, 1, 1]
+}
+```
 
 ## API
+
+### getNatureNames
+
+### getNatureValue: (nature)
+
+### getNatureDatas
 
 ### calHpStats: (iv, baseStats, ev, level)
 
