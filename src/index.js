@@ -61,8 +61,8 @@ function calAllStats (ivs, baseStats, evs, level = 1, nature = [1, 1, 1, 1, 1]) 
   return stats
 }
 
-exports.natureNames = natures.names
-exports.natureValues = natures.values
+exports.getNatureNames = natures.names
+exports.getNatureValues = natures.values
 exports.calHpStats = calHpStats
 exports.calUnhpStats = calUnhpStats
 exports.calAllStats = calAllStats
