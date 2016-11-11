@@ -26,5 +26,21 @@ const data = {
   serious: [1, 1, 1, 1, 1]
 }
 
-exports.values = data
+/**
+ * @param  {String} nature Pokémon nature
+ * @return {Array}
+ */
+function getNatureValue (nature) {
+  if (typeof nature === 'string') {
+    nature = nature.toLowerCase()
+    if (data[nature]) {
+      return data[nature]
+    } else {
+      throw new Error('The nature is a invalid Pokémon nature.')
+    }
+  }
+}
+
+exports.data = data
 exports.names = Object.keys(data)
+exports.getNatureValue = getNatureValue

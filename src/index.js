@@ -46,12 +46,7 @@ function calAllStats (ivs, baseStats, evs, level = 1, nature = [1, 1, 1, 1, 1]) 
   stats.push(calHpStats(ivs[0], baseStats[0], evs[0], level))
 
   if (typeof nature === 'string') {
-    let o = nature.toLowerCase()
-    if (natures.values[o]) {
-      nature = natures.values[o]
-    } else {
-      throw new Error('The nature is a invalid Pokémon nature.')
-    }
+    nature = natures.getNatureValue(nature)
   }
 
   for (let i = 1; i < 6; i++) {
@@ -62,7 +57,8 @@ function calAllStats (ivs, baseStats, evs, level = 1, nature = [1, 1, 1, 1, 1]) 
 }
 
 exports.getNatureNames = natures.names
-exports.getNatureValues = natures.values
+exports.getNatureValue = natures.getNatureValue
+exports.getNatureDatas = natures.data
 exports.calHpStats = calHpStats
 exports.calUnhpStats = calUnhpStats
 exports.calAllStats = calAllStats
